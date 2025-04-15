@@ -1,7 +1,34 @@
-![image](https://github.com/user-attachments/assets/95613e2d-4d57-4722-a384-28f5dcb48110)
 #Retrieve APPX update files via WinGet prior to running the APPX Install Script
+### AppX IDs for Windows Applications
+
+| **AppX** | **ID** |
+|----------|--------|
+| Windows NotePad | 9MSMLRH6LZF3 |
+| HEIF | 9PMMSR1CGPWG |
+| Microsoft Sticky Notes | 9NBLGGH4QGHW |
+| Paint | 9PCFS5B6T72H |
+| Power Automate Desktop | 9NFTCH6J7FHV |
+| Raw Image Extension | 9NCTDW2W1BH8 |
+| ToDo | 9NBLGGH5R558 |
+| VP9 Video Extensions | 9N4D0MSMP0PT |
+| WebMediaExtensions | 9N5TDP8VCMHS |
+| WebpImageExtension | 9PG2DK419DRG |
+| Photos | 9WZDNCRFJBH4 |
+| Clock | 9WZDNCRFJ3PR |
+| Calculator | 9WZDNCRFHVN5 |
+| Terminal | Microsoft.WindowsTerminal |
+| VCLibs UWPDesktop | Microsoft.VCLibs.Desktop.14 |
+| HEVC | 9NMZLZ57R3T7 |
+| Snipping Tool (Screensketch) | 9MZ95KL8MR0L |
+| Microsoft.WindowsAppRuntime.1.3 | Appruntime |
+| Microsoft.WindowsAppRuntime.1.5 | Appruntime |
+| Onenote | XPFFZHVGQWWLHB |
+
+
+```
 #PowerShell to download all Inbox Apps, AppX
 # List of WinGet IDs for Microsoft Inbox apps
+
 $apps = @(
     "9WZDNCRFHVN5",  # Calculator
     "9WZDNCRFHVQM",  # Calendar and Mail
@@ -24,14 +51,12 @@ $apps = @(
     "9WZDNCRFJ3Q2",  # Skype
     "9WZDNCRFJ3Q2"   # Voice Recorder
 )
+
 # Install each app
 foreach ($app in $apps) {
     winget download--id $app --accept-package-agreements --architecture x64
 }
-![image](https://github.com/user-attachments/assets/9dd45fca-6cfc-4cc1-8f76-7a5102a2968d)
-
-
-
+```
 
 # Win11-24H2-AppxInstall
 Updating AppX apps for Win11 24H2 set each of these as individual actions within a Task Sequence in MEM
